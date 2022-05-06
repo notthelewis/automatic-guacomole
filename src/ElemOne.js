@@ -1,17 +1,20 @@
 import React from 'react';
 
-function ElemOne({ s, clickHandler }) {
+function ElemOne({ clickHandler }) {
     function elemOneHandler() {
-        clickHandler(true, 1, 42069);
+        clickHandler({
+            show_model: true,
+            nhs_num: 9999,
+            patient_id: 1
+        });
     }
-    if (s === false) {
-        return(
-            <>
-                <h1> Hello from element one </h1>
-                <button onClick={elemOneHandler}> Change elements? </button>
-            </>
-        );
-    }
+
+    return(
+        <>
+           <h1> Hello from element one </h1>
+           <button onClick={elemOneHandler}> Show model </button>
+        </>
+    );
 }
 
 export default ElemOne;
